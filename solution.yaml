@@ -1,0 +1,10 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: sap-icon-extractor-agent-4424c
+  version: "1.0.0"
+  description: AI agent that discovers, downloads, deduplicates, and catalogs SAP icons from Google Images
+
+assets:
+  - ref: ./assets/sap-icon-extractor-agent/asset.yaml

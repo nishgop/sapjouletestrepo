@@ -1,0 +1,27 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: agent
+
+metadata:
+  name: sap-icon-extractor-agent
+  version: "1.0.0"
+
+container:
+  buildPath: .
+  port: 5000
+
+provides:
+  apis:
+    - name: sap-icon-extractor-agent
+      kind: a2a
+      ordId: customer.build:apiResource:sap-icon-extractor-agent-4424c.sap-icon-extractor-agent:v1
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    failureThreshold: 12
+    periodSeconds: 5
+  liveness:
+    path: /.well-known/agent.json
+  readiness:
+    path: /.well-known/agent.json
